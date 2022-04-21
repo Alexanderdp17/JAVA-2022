@@ -1,0 +1,29 @@
+import java.util.Scanner;
+class Equation
+{
+    public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ingrese a, b, c, separados por espacios:");// función de salida
+        int a=scan.nextInt();
+        int b=scan.nextInt();
+        int c=scan.nextInt();
+        double delta=b*b-4*a*c;
+        // La raíz de la ecuación de acuerdo con el delta discriminante = b * b-4ac
+        if (delta>0)
+        {
+            double x1=(-b+Math.sqrt(delta))/(2*a);
+            double x2=(-b-Math.sqrt(delta))/(2*a);
+            System.out.println("Hay dos números reales: x1 ="+x1+"x2="+x2);
+        }
+        else if (delta==0)
+        {
+            double x1 = -b/(2*a);
+            System.out.println("La ecuación tiene solo una raíz real, x1 = x2 ="+x1);
+        }
+        else if (delta<0)
+        {
+            System.out.println("Ecuaciones sin raíces reales");
+        }
+    }
+}
